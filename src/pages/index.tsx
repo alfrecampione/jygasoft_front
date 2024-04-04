@@ -31,7 +31,7 @@ const URL = 'https://localhost:'+PORT+'/api/Person';
   return(
       <div className={styles.personList}>
         {personList.map((person: PersonDto, index) =>
-            <div key={index} className={styles.person}>
+            <div key={index}>
                 <CreatePerson person={person}/>
             </div>
         )}
@@ -49,7 +49,7 @@ function CreatePerson({person}:Person){
   }
     return(
       <>
-      <div onClick={handleDivClick}>
+      <div className={styles.person} onClick={handleDivClick}>
         <p>{person.fullName}</p>
         <p>{person.email}</p>
         <p>{person.interestRate}%</p>
@@ -67,22 +67,24 @@ type PaymentCi={
 }
 function CreatePaymentList({ci}:PaymentCi){
   const [paymentList, setPaymentList] = useState<PaymentDto[]>([]);
-  const URL = 'https://localhost:'+PORT+'/api/Loan/'+ci;
-  useEffect(() => {
-    axios.get(URL)
-        .then((response) => {setPaymentList(response.data)})
-        .catch((error) => {
-          console.log(error);
-        })
-  }, [])
+  const URL = 'https://localhost:'+PORT+'/api/Payment/'+ci;
+    useEffect(() => {
+        axios.get(URL)
+            .then((response) => {
+                setPaymentList(response.data)
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+    }, [])
   return (
       <div className={styles.loanList}>
         {paymentList.map((payment, index) =>
           <div key={index} className={styles.loan}>
-            <p>{payment.Amount}</p>
-            <p>{payment.PaymentPeriod}</p>
-            <p>{payment.PayDate}</p>
-            <p>{payment.Status}</p>
+            <p>{payment.amount}</p>
+            <p>{payment.paymentPeriod}</p>
+            <p>{payment.payDate}</p>
+            <p>{payment.status}</p>
           </div>
         )}
       </div>

@@ -1,14 +1,18 @@
 .personList{
     margin: 5vh 10vw;
+    border: 1px solid black;
 }
 .person {
     display: flex;
     gap: 10px;
+    border: 1px solid black;
 }
 .loanList{
     margin-left: 10px;
+    border: 1px solid black;
 }
 .loan {
     display: flex;
     gap: 10px;
+    border: 1px solid black;
 }
