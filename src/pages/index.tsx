@@ -3,15 +3,22 @@ import styles from "@/styles/index.module.css"
 import axios from "axios";
 import {PersonDto} from "@/Dto/in/CreatePerson";
 import {PaymentDto} from "@/Dto/in/CreatePayment";
-import {type} from "os";
+import Link from 'next/link';
 
-const PORT = 7221;
+export const PORT = 7221;
 export default function Home() {
   return (
     <>
-      <div>
-        <CreatePersonStack/>
-      </div>
+        <div className={styles.list}>
+            <CreatePersonStack/>
+        </div>
+        <div className={styles.creation}>
+            <h3>
+                <Link href="/create_person">
+                    Click here to create a new person's loan
+                </Link>
+            </h3>
+        </div>
     </>
   );
 }
@@ -49,16 +56,17 @@ function CreatePerson({person}:Person){
   }
     return(
       <>
-      <div className={styles.person} onClick={handleDivClick}>
-        <p>{person.fullName}</p>
-        <p>{person.email}</p>
-        <p>{person.interestRate}%</p>
-        <p>{person.startAmount}</p>
-        <p>{person.paidAmount}</p>
-        <p>{person.totalAmount}</p>
-      </div>
-      {opened &&
-          <CreatePaymentList ci={person.ci} />}
+          <div className={styles.person} onClick={handleDivClick}>
+              <p><Link href={`/payments?param1=${person.ci}`}>{person.ci}</Link></p>
+              <p>{person.fullName}</p>
+              <p>{person.email}</p>
+              <p>{person.interestRate}%</p>
+              <p>{person.startAmount}</p>
+              <p>{person.paidAmount}</p>
+              <p>{person.totalAmount}</p>
+          </div>
+          {opened &&
+              <CreatePaymentList ci={person.ci} />}
       </>
   )
 }

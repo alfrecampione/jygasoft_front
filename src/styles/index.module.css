@@ -1,18 +1,42 @@
 .personList{
-    margin: 5vh 10vw;
     border: 1px solid black;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.5);
+    align-items: center;
+    align-content: center;
 }
 .person {
+    text-align: center;
     display: flex;
-    gap: 10px;
+    gap: 5vw;
     border: 1px solid black;
+    align-items: center;
+    align-content: center;
 }
 .loanList{
     margin-left: 10px;
     border: 1px solid black;
+    align-items: center;
+    align-content: center;
 }
 .loan {
+    text-align: center;
     display: flex;
     gap: 10px;
     border: 1px solid black;
+    align-items: center;
+    align-content: center;
+}
+.list{
+    margin: 5vh 10vw;
+    background-color: lightgray;
+    align-items: center;
+    align-content: center;
+    cursor: pointer;
+}
+.creation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
