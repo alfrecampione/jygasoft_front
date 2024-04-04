@@ -1,3 +1,14 @@
 .personList{
-
+    margin: 5vh 10vw;
+}
+.person {
+    display: flex;
+    gap: 10px;
+}
+.loanList{
+    margin-left: 10px;
+}
+.loan {
+    display: flex;
+    gap: 10px;
 }

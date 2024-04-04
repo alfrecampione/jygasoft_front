@@ -1,9 +1,9 @@
-export interface CreatePersonDto{
-    CI : string
-    FullName : string
-    Email : string
-    InterestRate : number
-    StartAmount : number
-    PaidAmount : number
-    TotalAmount : number
+export interface PersonDto{
+    ci : string
+    fullName : string
+    email : string
+    interestRate : number
+    startAmount : number
+    paidAmount : number
+    totalAmount : number
 }

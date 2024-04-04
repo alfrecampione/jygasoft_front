@@ -1,6 +1,6 @@
-export interface CreatePaymentDto{
+export interface PaymentDto{
     Amount : number
-    Period : number
+    PaymentPeriod : number
     PayDate : string
     Status : string
 }
